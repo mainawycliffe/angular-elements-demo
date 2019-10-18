@@ -17,6 +17,6 @@ export class HelloWorldComponent implements OnInit {
   ngOnInit() {}
 
   onSayHelloBack() {
-    this.sayHelloBack.emit('Hi to you too!');
+    this.sayHelloBack.emit('✋🏿✋🏿✋🏿 Hi to you too!');
   }
 }
