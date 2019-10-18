@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <app-hello-world some-prop="world"></app-hello-world>
+
+  <script>
+
+    const el = document.querySelector('app-hello-world');
+    el.addEventListener('sayHelloBack', (event) => {
+      alert(event.detail);
+    });
+
+  </script>
+
+  <script src="./ng-es5.js" nomodule></script>
+  <script src="./ng-es2015.js" type="module"></script>
+</body>
+
+</html>
