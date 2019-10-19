@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { HelloWorldServiceService as HelloWorldService } from '../hello-world-service.service';
 
 @Component({
   selector: 'app-hello-world',
@@ -7,16 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HelloWorldComponent implements OnInit {
   @Input()
-  someProp;
+  name;
 
   @Output()
   sayHelloBack = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(private service: HelloWorldService) {}
 
   ngOnInit() {}
 
   onSayHelloBack() {
-    this.sayHelloBack.emit('✋🏿✋🏿✋🏿 Hi to you too!');
+    this.sayHelloBack.emit(this.service.sayHiBack(this.name));
   }
 }
